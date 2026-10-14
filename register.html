@@ -441,6 +441,52 @@ a{text-decoration:none;color:inherit}button,input{font:inherit}img{max-width:100
   }
 }
 
+
+/* BUG 004 FIX — 24/7, 99.9%, and infinity stat cards: desktop mouse hover only */
+@media (min-width:1025px) and (hover:hover) and (pointer:fine){
+  .visual-stat{
+    position:relative;
+    transition:transform .35s cubic-bezier(.22,1,.36,1),
+               border-color .35s ease,
+               background .35s ease,
+               box-shadow .35s ease;
+  }
+  .visual-stat strong,
+  .visual-stat span{
+    transition:color .3s ease,text-shadow .3s ease,letter-spacing .3s ease;
+  }
+  .visual-stat:hover{
+    transform:translateY(-7px);
+    border-color:rgba(25,220,255,.58);
+    background:linear-gradient(135deg,rgba(25,220,255,.12),rgba(123,69,255,.10));
+    box-shadow:0 16px 34px rgba(0,0,0,.28),0 0 24px rgba(25,220,255,.12);
+  }
+  .visual-stat:hover strong{
+    color:#55eaff;
+    text-shadow:0 0 18px rgba(25,220,255,.35);
+  }
+  .visual-stat:hover span{
+    color:#d4e8f6;
+    letter-spacing:1.15px;
+  }
+}
+/* Keep touch devices free of hover effects */
+@media (max-width:1024px),(hover:none),(pointer:coarse){
+  .visual-stat,
+  .visual-stat strong,
+  .visual-stat span{
+    transition:none!important;
+  }
+  .visual-stat:hover{
+    transform:none!important;
+    border-color:rgba(96,190,255,.16)!important;
+    background:rgba(4,12,24,.46)!important;
+    box-shadow:none!important;
+  }
+  .visual-stat:hover strong{color:#fff!important;text-shadow:none!important}
+  .visual-stat:hover span{color:#6f879c!important;letter-spacing:1px!important}
+}
+
 </style>
 
 </head>

@@ -90,7 +90,21 @@ a{text-decoration:none;color:inherit}button,input{font:inherit}img{max-width:100
 
 /* DESKTOP ONLY HOVER — matches index behavior */
 @media (min-width:1025px) and (hover:hover) and (pointer:fine){
- .brand img{transition:.35s cubic-bezier(.22,1,.36,1)}.brand:hover img{transform:translateY(-2px) scale(1.025);filter:drop-shadow(0 8px 25px rgba(25,220,255,.28))}
+ .brand img{transition:.35s cubic-bezier(.22,1,.36,1)}
+ .brand:hover img{transform:translateY(-2px) scale(1.025);filter:drop-shadow(0 8px 25px rgba(25,220,255,.28))}
+
+ /* Visual stats: Daily, Clear, On-time */
+ .visual-stat{
+   transition:transform .3s ease,border-color .3s ease,background .3s ease,box-shadow .3s ease;
+ }
+ .visual-stat:hover{
+   transform:translateY(-5px);
+   border-color:rgba(25,220,255,.48);
+   background:rgba(7,25,42,.78);
+   box-shadow:0 12px 28px rgba(0,0,0,.24),0 0 22px rgba(25,220,255,.10);
+ }
+ .visual-stat:hover strong{color:#55eaff}
+ .visual-stat:hover span{color:#c7d4e3}
 }
 @media (max-width:1024px),(hover:none),(pointer:coarse){
  .back-home:hover,.btn-primary:hover,.password-toggle:hover,.option:hover,.forgot-pass-link:hover,.auth-link a:hover{transform:none!important}.back-home:hover{color:#8fa5b9}.btn-primary:hover{box-shadow:0 14px 38px rgba(25,220,255,.14)}.password-toggle:hover{color:#62788c;background:transparent}.option:hover{color:#62788c;background:transparent}.forgot-pass-link:hover,.auth-link a:hover{color:inherit}
